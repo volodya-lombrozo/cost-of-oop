@@ -26,3 +26,5 @@ replay_pid*
 /oop
 /target
 *.iml
+.DS_Store
+results/.DS_Store
