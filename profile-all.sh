@@ -9,7 +9,6 @@ java -jar $PROFILER clear-alloc-data
 java -jar $PROFILER clear-monitor-data
 java -jar $PROFILER clear-charts
 
-
 java -jar $PROFILER start-alloc-object-counting
 java -jar $PROFILER start-tracing
 echo "Profiling is started successfully"
