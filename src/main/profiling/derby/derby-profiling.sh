@@ -17,7 +17,8 @@ sleep 5
 # In my case JMeter path /Users/lombrozo/Workspace/Tools/apache-jmeter-5.5/bin
 # The full documentation about JMeter cli you can find right here:
 # https://jmeter.apache.org/usermanual/get-started.html#non_gui
-/Users/lombrozo/Workspace/Tools/apache-jmeter-5.5/bin/jmeter -n -t "Apache Derby.jmx"
+/Users/lombrozo/Workspace/Tools/apache-jmeter-5.5/bin/jmeter -n -t "Apache Derby.jmx" &
+JMETER_PID=$!
 
 # Warmup
 
@@ -33,13 +34,10 @@ java -jar $PROFILER clear-alloc-data
 java -jar $PROFILER clear-monitor-data
 java -jar $PROFILER clear-charts
 
-java -jar $PROFILER start-alloc-object-counting
 java -jar $PROFILER start-tracing
 echo "Profiling is started successfully"
 sleep 60
 java -jar $PROFILER capture-performance-snapshot
-java -jar $PROFILER capture-memory-snapshot
-java -jar $PROFILER stop-alloc-recording
 java -jar $PROFILER stop-cpu-profiling
 ls -Artlh $SNAPSHOTS | tail -n 2
 echo  "Profiling is stopped successfully"
@@ -47,6 +45,7 @@ echo  "Profiling is stopped successfully"
 
 #Stop load testing
 /Users/lombrozo/Workspace/Tools/apache-jmeter-5.5/bin/stoptest.sh
+kill $JMETER_PID
 
 #Stop application
 kill $APP_PID
