@@ -10,7 +10,7 @@ PROFILER_SNAPSHOTS=${PROFILER_SNAPSHOTS:="/Users/lombrozo/Snapshots"}
 PROFILER_API="$PROFILER/lib/yjp-controller-api-redist.jar"
 PROFILER_AGENT="$PROFILER/bin/mac/libyjpagent.dylib"
 PROFILER_CONVERTER="$PROFILER/lib/yourkit.jar"
-APPLICATION_STARTUP=${APPLICATION_STARTUP:="java -agentpath:$PROFILER_AGENT -jar $APPLICATION_JAR &"}
+APPLICATION_STARTUP=${APPLICATION_STARTUP:="java -agentpath:$PROFILER_AGENT -jar $APPLICATION_JAR"}
 # In order to attach java agent use the next command for Mac
 # -agentpath:<profiler directory>/bin/mac/libyjpagent.dylib
 # To check commands for other OSs, please, visit https://www.yourkit.com/docs/java/help/agent.jsp
