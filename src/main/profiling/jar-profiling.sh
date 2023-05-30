@@ -1,10 +1,10 @@
 set -x
 set -e
 #Init all required variables
-JMETER_PLAN=${JMETER_PLAN:="FAIL Apache Derby.jmx"}
+JMETER_PLAN=${JMETER_PLAN:="Apache Derby.jmx"}
 JMETER_PATH=${JMETER_PATH:="/Users/lombrozo/Workspace/Tools/apache-jmeter-5.5/bin"}
 PROFILER=${PROFILER:="/Applications/YourKit-Java-Profiler-2022.9.app/Contents/Resources"}
-APPLICATION_JAR=${APPLICATION_JAR:="FAIL /Users/lombrozo/Workspace/Tools/db-derby-10.16.1.1-bin/lib/derbyrun.jar server start"}
+APPLICATION_JAR=${APPLICATION_JAR:="/Users/lombrozo/Workspace/Tools/db-derby-10.16.1.1-bin/lib/derbyrun.jar server start"}
 PROFILER_SNAPSHOTS=${PROFILER_SNAPSHOTS:="/Users/lombrozo/Snapshots"}
 
 PROFILER_API="$PROFILER/lib/yjp-controller-api-redist.jar"
@@ -19,7 +19,7 @@ APPLICATION_STARTUP=${APPLICATION_STARTUP:="java -agentpath:$PROFILER_AGENT -jar
 $APPLICATION_STARTUP &
 APP_PID=$!
 # Wait until startup
-sleep 5
+sleep 10
 # Add load through JMeter
 # In my case JMeter path /Users/lombrozo/Workspace/Tools/apache-jmeter-5.5/bin
 # The full documentation about JMeter cli you can find right here:
@@ -50,3 +50,4 @@ $JMETER_PATH/stoptest.sh
 kill $JMETER_PID
 #Stop application
 kill $APP_PID
+mv "Method-list--CPU.csv" "method-list-cpu.csv"
