@@ -4,6 +4,7 @@ public class Half {
 
     public static void main(final String[] args) throws InterruptedException {
         int sum = 0;
+        System.out.println("Starting application with static and instance methods");
         for (int i = 0; i < Integer.MAX_VALUE; ++i) {
             Book b = new Discounted(i);
             sum += Half.discounted(b.price());

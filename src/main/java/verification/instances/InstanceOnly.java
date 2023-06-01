@@ -5,6 +5,7 @@ public class InstanceOnly {
 
     public static void main(final String[] args) throws InterruptedException {
         int sum = 0;
+        System.out.println("Starting application with instance methods only");
         for (int i = 0; i < Integer.MAX_VALUE; ++i) {
             Book b = new Discounted(new Discounted(new Prime(i)));
             sum += b.price();
