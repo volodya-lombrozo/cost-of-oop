@@ -15,7 +15,7 @@ APPLICATION_STARTUP=${APPLICATION_STARTUP:="java -agentpath:$PROFILER_AGENT -jar
 # To check commands for other OSs, please, visit https://www.yourkit.com/docs/java/help/agent.jsp
 # In my case <profiler directory> is /Applications/YourKit-Java-Profiler-2022.9.app/Contents/Resources/bin/mac/libyjpagent.dylib
 #Start application
-eval "$APPLICATION_STARTUP &"
+$APPLICATION_STARTUP &
 APP_PID=$!
 echo "Java application pid=$APP_PID"
 # Wait until startup
@@ -57,7 +57,13 @@ if [[ -z "${JMETER_PID}" ]];
   then
     echo "JMeter is not running"
   else
-    kill "$JMETER_PID"
+    if ps -p $JMETER_PID > /dev/null
+    then
+       echo "$JMETER_PID is running"
+       kill "$JMETER_PID"
+    else
+       echo "JMeter - $JMETER_PID is not running"
+    fi
 fi
 #Stop application
 if [[ -z "${APP_PID}" ]];
