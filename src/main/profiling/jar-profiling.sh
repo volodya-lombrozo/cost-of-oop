@@ -15,7 +15,7 @@ APPLICATION_STARTUP=${APPLICATION_STARTUP:="java -agentpath:$PROFILER_AGENT -jar
 # To check commands for other OSs, please, visit https://www.yourkit.com/docs/java/help/agent.jsp
 # In my case <profiler directory> is /Applications/YourKit-Java-Profiler-2022.9.app/Contents/Resources/bin/mac/libyjpagent.dylib
 #Start application
-$APPLICATION_STARTUP &
+$APPLICATION_STARTUP > /dev/null &
 APP_PID=$!
 echo "Java application pid=$APP_PID"
 # Wait until startup
