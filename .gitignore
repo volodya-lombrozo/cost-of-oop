@@ -32,5 +32,3 @@ results/.DS_Store
 /jmeter
 
 src/main/profiling/derby/jmeter
-
-**/method-list-cpu.csv
