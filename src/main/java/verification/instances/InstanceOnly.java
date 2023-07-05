@@ -41,7 +41,7 @@ public class InstanceOnly {
 
         @Override
         public int price() {
-            return this.usd;
+            return this.usd * 3;
         }
 
     }
