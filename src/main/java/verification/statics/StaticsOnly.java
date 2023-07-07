@@ -4,10 +4,9 @@ public class StaticsOnly {
 
     public static void main(String[] args) throws InterruptedException {
         int sum = 0;
-        System.out.println("Starting application with static methods only");
         for (int i = 0; i < Integer.MAX_VALUE; ++i) {
             Thread.sleep(10);
-            sum += StaticsOnly.discounted(StaticsOnly.discounted(StaticsOnly.prime(i)));
+            sum += StaticsOnly.discounted(StaticsOnly.prime(i));
         }
         System.out.printf("Total: %d\n", sum);
     }
