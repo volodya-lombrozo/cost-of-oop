@@ -125,7 +125,7 @@
           </ResultCollector>
           <hashTree/>
           <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Wait a bit" enabled="true">
-            <stringProp name="ConstantTimer.delay">50</stringProp>
+            <stringProp name="ConstantTimer.delay">20</stringProp>
           </ConstantTimer>
           <hashTree/>
         </hashTree>
