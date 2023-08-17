@@ -30,7 +30,7 @@ public class ExampleOOPTest {
 
     @Benchmark
     public void mainTest() {
-        ExampleOOP.main();
+        ObjectOriented.main();
     }
 
 }

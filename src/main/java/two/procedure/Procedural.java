@@ -1,6 +1,6 @@
 package two.procedure;
 
-public class ExampleProcedure {
+public class Procedural {
     private static int prime(int u) {
         return u;
     }

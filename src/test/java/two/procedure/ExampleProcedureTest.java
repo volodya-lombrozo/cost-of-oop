@@ -6,6 +6,6 @@ public class ExampleProcedureTest {
 
     @Benchmark
     public void mainTest() {
-        ExampleProcedure.main();
+        Procedural.main();
     }
 }
